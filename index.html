@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -11,8 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <title>지원피디아</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
@@ -31,7 +34,7 @@
             align-items: center;
             justify-content: center;
 
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg');
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://image.cine21.com/resize/cine21/article/2013/1210/12_13_07__52a686c300fef[H800-].jpg');
             background-position: center;
             background-size: cover;
         }
@@ -63,51 +66,176 @@
             width: 1200px;
             margin: 20px auto 20px auto;
         }
+
+        .checked {
+            color: orange;
+        }
+
+        /*  .star-rating {
+            width: 205px;
+        }
+
+        .star-rating,
+        .star-rating span {
+            display: inline-block;
+            height: 39px;
+            overflow: hidden;
+            background-image: url('https://lh3.googleusercontent.com/-SCXjTBCBtiLJSleg8MvjZGoOeJdDoggshO_6qr8wUCrKkcGcXyqAjG8NOzjib-A86YZFN_MLk-eqT-QQP4vX_Bns-hYkm3b49GqrwoJ')no-repeat;
+        }
+
+        .star-rating span {
+            background-position: left bottom;
+            line-height: O;
+            vertical-align: top;
+        }*/
+        .mypost {
+
+            width: 500px;
+            margin: 20px auto 20px auto;
+            padding: 20px 20px 20px 20px;
+
+            box-shadow: 0px 0px 3px 0px gray;
+        }
+
+        .mybtn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+
+        }
+
+        .mybtn>button {
+            margin-right: 10px;
+        }
     </style>
+
+<script>
+    function hey(){
+        console.log('안녕하세요!')
+    }
+</script>
+
 </head>
 
 <body>
     <div class="mytitle">
-        <h1>지원피디아</h1>
-        <button>영화 기록하기</button>
+        <h1>CinemaScope</h1>
+        <button onclick="hey()">내 기록장 바로가기</button>
+    </div>
+    <div class="mypost">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">영화 URL</label>
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">별점</label>
+            <select class="form-select" id="inputGroupSelect01">
+                <option selected>--선택하기--</option>
+                <option value="1">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                    </span>
+                </option>
+                <option value="2">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                </option>
+                <option value="3">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </option>
+                <option value="4">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </option>
+                <option value="5">
+             ⭐️⭐️⭐️⭐️⭐️
+                </option>
+            </select>
+        </div>
+
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">코멘트</label>
+        </div>
+        <div class="mybtn">
+            <button type="button" class="btn btn-dark">기록하기</button>
+            <button type="button" class="btn btn-outline-dark">닫기</button>
+        </div>
     </div>
     <div class="mycards">
         <div class="row row-cols-1 row-cols-md-4 g-4">
-            
+
             <div class="col">
                 <div class="card h-100">
                     <img src="https://upload.wikimedia.org/wikipedia/ko/thumb/a/a3/그녀_포스터.jpg/220px-그녀_포스터.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">그냥 화려하기만 한.</p>
+                        <h5 class="card-title">그녀</h5>
+                        <p class="card-text">제일 사랑하는 영화</p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+
+                        <div class="wrap-star">
+                            <div class='star-rating'>
+                                <span style="width:30%">
+                                </span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="http://t1.daumcdn.net/movie/0dac835c9bb841f7be4a6e59436865541576829054165"
+                    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbDOGjE%2FbtriiBwCHsS%2F02lyE6MLajzmT0aYZrBWlK%2Fimg.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">그냥 화려하기만 한.</p>
+                        <h5 class="card-title">폭풍속으로</h5>
+                        <p class="card-text">서핑 좋아하면 꼭</p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/ko/c/ce/더_퍼스트_슬램덩크_포스터.jpg?20230117160029"
-                        class="card-img-top" alt="...">
+                    <img src="http://t1.daumcdn.net/cfile/200D8E014BCD0ABB16" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">그냥 화려하기만 한.</p>
+                        <h5 class="card-title">경찰서를 털어라</h5>
+                        <p class="card-text">가볍게 보기 좋은 코미디 장르</p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+
                     </div>
                 </div>
             </div>
@@ -117,10 +245,15 @@
                     <img src="https://upload.wikimedia.org/wikipedia/ko/6/6f/트루먼_쇼_포스터.jpg" class="card-img-top"
                         alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">그냥 화려하기만 한.</p>
+                        <h5 class="card-title">트루먼쇼</h5>
+                        <p class="card-text">"Good morning, and in case I don't see ya, good afternoon, good evening,
+                            and good night."</p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+
                     </div>
                 </div>
             </div>
